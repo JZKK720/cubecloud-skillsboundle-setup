@@ -24,7 +24,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\setup-global-skills.ps1
 | 1b | Copy install-skill.ps1 helper to ~/dev/bin/ | instant |
 | 2 | Install 11 CLI tools (uv tool + npm + bun) | ~5 min |
 | 3 | Clone 23 fork mirrors (22 JZKK720 + awesome-design-md) (skip with -SkipForks) | ~2 min |
-| 4 | Install 35 skills through security-gated pipeline | ~3 min |
+| 4 | Install 37 skills through security-gated pipeline (64 total incl. Azure-extension skills) | ~3 min |
 | 5 | Configure 6 MCP servers in VS Code User/mcp.json | instant |
 | 5b | Pin Copilot utility models in VS Code User/settings.json | instant |
 | 6 | Create governance docs (README, CONFLICTS, MEMORY_POLICY, UPDATE_POLICY, SCAN_LOG) | instant |
@@ -69,7 +69,7 @@ winget install Microsoft.VisualStudioCode
 - uipro, firecrawl (via npm)
 - gbrain (via bun)
 
-**35+ skills** (in ~/.agents/skills/ — discovered by VS Code Copilot Chat):
+**37 skills via pipeline + ~28 Azure-extension skills = 64 total** (in ~/.agents/skills/ — discovered by VS Code Copilot Chat):
 - superpowers methodology (12 skills): TDD, systematic-debugging, writing/executing-plans, subagent-driven-development, code review, git-worktrees, finishing-branch, writing-skills, using-superpowers, dispatching-parallel-agents
 - self-learning (meta-skill for skill authoring)
 - improve (audit-to-plan)
@@ -84,6 +84,8 @@ winget install Microsoft.VisualStudioCode
 - oz-skills (14 active): analysis-artifacts, ci-fix, create-pull-request, dbt-model-index, docs-update, github-bug-report-triage, github-issue-dedupe, mcp-builder, scheduler, seo-aeo-audit, slack-qa-investigate, terraform-style-check, web-accessibility-audit, web-performance-audit
 - design-md-library (wrapper that indexes the 74 DESIGN.md files in the awesome-design-md fork mirror)
 - gstack-review (hand-adapted pre-landing PR review port, with 8 reference files)
+- idea-to-design (clean port of brainstorming — methodology only, no browser server)
+- webapp-testing (clean port — methodology only, no bundled scripts; agent writes native Playwright or uses browser MCP tools)
 
 **23 fork mirrors** (in ~/dev/forks/JZKK720/ — read-only backups, incl. VoltAgent/awesome-design-md)
 

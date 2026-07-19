@@ -1,6 +1,6 @@
 # 🧊 CubeCloud Skills Bundle
 
-> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 62 skills, 11 CLIs, 6 MCP servers, and a 74-site design-system library, all security-gated.
+> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 64 skills, 11 CLIs, 6 MCP servers, and a 74-site design-system library, all security-gated.
 
 [![Skills](https://img.shields.io/badge/skills-64-2ea44f)](#whats-included)
 [![CLIs](https://img.shields.io/badge/CLIs-11-blue)](#clis-installed)
@@ -52,7 +52,7 @@ winget install Microsoft.VisualStudioCode
 
 ## What's included
 
-### Skills (62 active, 1 disabled, 5 blocked)
+### Skills (64 active, 1 disabled, 5 blocked — 2 with clean ports)
 
 **Superpowers methodology (12 skills)** from [obra/superpowers](https://github.com/obra/superpowers):
 test-driven-development · systematic-debugging · writing-plans · executing-plans · subagent-driven-development · requesting-code-review · receiving-code-review · using-git-worktrees · finishing-a-development-branch · writing-skills · using-superpowers · dispatching-parallel-agents
