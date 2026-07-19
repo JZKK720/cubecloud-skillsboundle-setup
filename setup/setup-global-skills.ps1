@@ -224,13 +224,30 @@ if (Test-Path $helperSrc) {
 # ============================================================
 Write-Step "Phase 2: CLI tools"
 
+# headroom-ai depends on ast-grep-cli, whose Rust-compiled sg.exe triggers a
+# Windows Defender false positive ("virus or potentially unwanted software",
+# os error 225). Add a scoped Defender exclusion before attempting the install.
+# Requires admin privileges; if it fails, headroom install will fail with a
+# clear error and the user can run bin/add-defender-exclusion-ast-grep.ps1
+# in an elevated PowerShell and re-run this script.
+$sgPath = "$env:APPDATA\uv\tools\ast-grep-cli"
+try {
+  $null = Add-MpPreference -ExclusionPath $sgPath -ErrorAction Stop
+  $null = Add-MpPreference -ExclusionProcess "sg.exe" -ErrorAction Stop
+  Write-OK "Defender exclusion for ast-grep-cli (sg.exe) added"
+} catch {
+  Write-Warn "Could not add Defender exclusion (not admin?). headroom install may fail."
+  Write-Warn "  Fix: run bin/add-defender-exclusion-ast-grep.ps1 in an elevated PowerShell, then re-run this script."
+}
+
 $pyTools = @(
   @{name="specify-cli"; pkg="specify-cli"},
   @{name="skillopt"; pkg="skillopt"},
   @{name="agent-reach"; pkg="git+https://github.com/Panniantong/Agent-Reach.git"},
   @{name="graphifyy[mcp]"; pkg="graphifyy[mcp]"},
   @{name="markitdown[all]"; pkg="markitdown[all]"},
-  @{name="scrapling[ai]"; pkg="scrapling[ai]"}
+  @{name="scrapling[ai]"; pkg="scrapling[ai]"},
+  @{name="headroom-ai[proxy]"; pkg="headroom-ai[proxy]"}
 )
 foreach ($t in $pyTools) {
   $binName = $t.name -replace '\[.*\]',''
@@ -485,7 +502,7 @@ if (-not $SkipAudit) {
   }
 
   $cliOk = 0; $cliFail = 0
-  foreach ($c in @("skillspector","skills-ref","specify","agent-reach","graphify","markitdown","gbrain","scrapling","uipro","firecrawl")) {
+  foreach ($c in @("skillspector","skills-ref","specify","agent-reach","graphify","markitdown","gbrain","scrapling","uipro","firecrawl","headroom")) {
     if (Get-Command $c -ErrorAction SilentlyContinue) { $cliOk++ } else { $cliFail++ }
   }
   Write-OK "CLI tools: $cliOk OK, $cliFail missing"

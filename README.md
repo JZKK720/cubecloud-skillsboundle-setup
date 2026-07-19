@@ -1,10 +1,10 @@
 # 🧊 CubeCloud Skills Bundle
 
-> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 64 skills, 11 CLIs, 6 MCP servers, and a 74-site design-system library, all security-gated.
+> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 64 skills, 12 CLIs, 7 MCP servers, and a 74-site design-system library, all security-gated.
 
 [![Skills](https://img.shields.io/badge/skills-64-2ea44f)](#whats-included)
-[![CLIs](https://img.shields.io/badge/CLIs-11-blue)](#clis-installed)
-[![MCP servers](https://img.shields.io/badge/MCP%20servers-6-purple)](#mcp-servers)
+[![CLIs](https://img.shields.io/badge/CLIs-12-blue)](#clis-installed)
+[![MCP servers](https://img.shields.io/badge/MCP%20servers-7-purple)](#mcp-servers)
 [![Security gate](https://img.shields.io/badge/security%20gate-SkillSpector-green)](#security-model)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D4)](#prerequisites)
 [![License](https://img.shields.io/badge/license-MIT-success)](LICENSE)
@@ -22,8 +22,8 @@ VS Code Copilot Chat gets dramatically more powerful when you give it **skills**
 | | Count | What |
 |---|---|---|
 | 🧠 Skills | **64** | Discovered by Copilot Chat — superpowers methodology, Azure patterns, design systems, code review, debugging, and more |
-| 🔧 CLIs | **11** | On PATH: `skillspector`, `skills-ref`, `specify`, `agent-reach`, `graphify`, `markitdown`, `gbrain`, `scrapling`, `uipro`, `firecrawl`, `skillopt-eval` |
-| 🔌 MCP servers | **6** | Configured in VS Code `mcp.json`: markitdown, skillspector, firecrawl, scrapling, gbrain, graphify |
+| 🔧 CLIs | **12** | On PATH: `skillspector`, `skills-ref`, `specify`, `agent-reach`, `graphify`, `markitdown`, `gbrain`, `scrapling`, `uipro`, `firecrawl`, `skillopt-eval`, `headroom` |
+| 🔌 MCP servers | **7** | Configured in VS Code `mcp.json`: markitdown, skillspector, firecrawl, scrapling, gbrain, graphify, headroom |
 | 📚 Fork mirrors | **23** | Read-only backups in `~/dev/forks/JZKK720/`, including VoltAgent/awesome-design-md |
 | 🎨 DESIGN.md files | **74** | Real-world design systems (Apple, Stripe, Linear, Vercel, Notion, Airbnb, Tesla…) indexed by the `design-md-library` skill |
 | 🔒 Security-gated | **yes** | Every skill scanned by SkillSpector before install; 5 skills blocked by design |
@@ -108,6 +108,7 @@ ai-mlstudio · airunway-aks-setup · appinsights-instrumentation · azure-ai · 
 | `uipro` | npm | UI/UX workflow CLI |
 | `firecrawl` | npm | Firecrawl API CLI |
 | `gbrain` | bun | Persistent agent memory |
+| `headroom` | uv | Context compression layer for AI agents (60-95% fewer tokens); MCP server exposes `headroom_compress`, `headroom_retrieve`, `headroom_stats`. Requires Defender exclusion for `ast-grep-cli` — see [Platform limitations](#platform-limitations-windows). |
 
 ### MCP servers
 
@@ -118,6 +119,7 @@ Configured in VS Code User `mcp.json`:
 - **scrapling** — stealthy fetching
 - **gbrain** — persistent memory
 - **graphify** — codebase knowledge graphs
+- **headroom** — context compression (`headroom_compress`, `headroom_retrieve`, `headroom_stats`)
 
 ## Security model
 
@@ -143,7 +145,7 @@ Full verdict history is in [`upstream/SCAN_LOG.md`](upstream/SCAN_LOG.md).
 │   ├── setup-global-skills.ps1 # master installer
 │   ├── install-skill.ps1       # security-gated skill install helper
 │   ├── skills-list.csv         # manifest of skills to install
-│   ├── mcp.json.template       # 6 MCP server config
+│   ├── mcp.json.template       # 7 MCP server config
 │   └── SETUP_GUIDE.md          # detailed guide
 ├── bin/                        # 17 audit/fix/install helper scripts
 ├── upstream/                   # governance docs + design-md-library wrapper skill
@@ -191,7 +193,7 @@ cd ~/dev/bin
 | Tool | Issue | Workaround |
 |---|---|---|
 | EverOS | `import fcntl` (Unix-only) | Not installed. `gbrain` MCP used instead. |
-| headroom | Windows Defender blocks `ast-grep-cli.exe` | Add Defender exclusion, or skip. |
+| headroom | Windows Defender blocks `ast-grep-cli.exe` (false positive on Rust binary) | Run `bin/add-defender-exclusion-ast-grep.ps1` in an elevated PowerShell, then `uv tool install "headroom-ai[proxy]"`. Exclusion is scoped to ast-grep only. |
 | recall | Needs Claude Code hooks | Claude Code only; not for VS Code Copilot. |
 
 ## License

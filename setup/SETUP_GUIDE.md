@@ -22,10 +22,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\setup-global-skills.ps1
 | 0c | Create directory skeleton (~/.agents/skills, ~/.claude/skills, ~/dev/) | instant |
 | 1 | Install SkillSpector (security scanner) + skills-ref (spec validator) | ~2 min |
 | 1b | Copy install-skill.ps1 helper to ~/dev/bin/ | instant |
-| 2 | Install 11 CLI tools (uv tool + npm + bun) | ~5 min |
+| 2 | Install 12 CLI tools (uv tool + npm + bun) | ~5 min |
 | 3 | Clone 23 fork mirrors (22 JZKK720 + awesome-design-md) (skip with -SkipForks) | ~2 min |
 | 4 | Install 37 skills through security-gated pipeline (64 total incl. Azure-extension skills) | ~3 min |
-| 5 | Configure 6 MCP servers in VS Code User/mcp.json | instant |
+| 5 | Configure 7 MCP servers in VS Code User/mcp.json | instant |
 | 5b | Pin Copilot utility models in VS Code User/settings.json | instant |
 | 6 | Create governance docs (README, CONFLICTS, MEMORY_POLICY, UPDATE_POLICY, SCAN_LOG) | instant |
 | 7 | Quick audit (skill count, CLI check, mcp.json validation) | instant |
@@ -56,18 +56,19 @@ winget install Microsoft.VisualStudioCode
 
 ### What gets installed
 
-**6 MCP servers** (in VS Code User/mcp.json):
-- markitdown, skillspector, firecrawl, scrapling, gbrain, graphify
+**7 MCP servers** (in VS Code User/mcp.json):
+- markitdown, skillspector, firecrawl, scrapling, gbrain, graphify, headroom
 
 **Copilot utility model pins** (in VS Code User/settings.json):
 - `chat.utilityModel = ollama-models/gemma4:26b-a4b-it-qat`
 - `chat.utilitySmallModel = ollama-models/ornith:9b-q8_0`
 - `chat.byokUtilityModelDefault = mainAgent` (BYOK fallback when a utility flow needs a default)
 
-**11 CLI tools** (on permanent user PATH):
+**12 CLI tools** (on permanent user PATH):
 - skillspector, skills-ref, specify, skillopt-eval, agent-reach, graphify, markitdown, scrapling (via uv)
 - uipro, firecrawl (via npm)
 - gbrain (via bun)
+- headroom (via uv, requires Defender exclusion for ast-grep-cli — see below)
 
 **37 skills via pipeline + ~28 Azure-extension skills = 64 total** (in ~/.agents/skills/ — discovered by VS Code Copilot Chat):
 - superpowers methodology (12 skills): TDD, systematic-debugging, writing/executing-plans, subagent-driven-development, code review, git-worktrees, finishing-branch, writing-skills, using-superpowers, dispatching-parallel-agents
@@ -117,7 +118,7 @@ Every skill is scanned by **NVIDIA SkillSpector** before install:
 | Tool | Issue | Workaround |
 |---|---|---|
 | EverOS | `import fcntl` (Unix-only) | Not installed. gbrain MCP used instead. |
-| headroom | Windows Defender blocks ast-grep-cli.exe | Add Defender exclusion, or skip. |
+| headroom | Windows Defender blocks `ast-grep-cli.exe` (false positive on Rust binary) | Run `bin/add-defender-exclusion-ast-grep.ps1` in an elevated PowerShell first, then `uv tool install "headroom-ai[proxy]"`. Exclusion is scoped to the ast-grep path only. |
 | recall | Needs Claude Code hooks | Claude Code only; not for VS Code Copilot. |
 
 ### After setup

@@ -34,6 +34,12 @@
       "type": "stdio",
       "command": "graphify-mcp",
       "args": ["--transport", "stdio"]
+    },
+    "headroom": {
+      "type": "stdio",
+      "command": "headroom",
+      "args": ["mcp", "serve"],
+      "env": { "PYTHONUTF8": "1" }
     }
   },
   "inputs": []
