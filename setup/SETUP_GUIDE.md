@@ -158,12 +158,12 @@ cd ~/dev/setup
 git init
 git add .
 git commit -m "Global skills + CLIs + MCP setup package"
-git remote add origin https://github.com/<your-username>/vscode-skills-setup.git
+git remote add origin https://github.com/JZKK720/cubecloud-skillsboundle-setup.git
 git push -u origin main
 ```
 
 Then on any new machine:
 ```powershell
-git clone https://github.com/<your-username>/vscode-skills-setup.git ~/dev/setup
+git clone https://github.com/JZKK720/cubecloud-skillsboundle-setup.git ~/dev/setup
 powershell -NoProfile -ExecutionPolicy Bypass -File ~/dev/setup/setup-global-skills.ps1
 ```
