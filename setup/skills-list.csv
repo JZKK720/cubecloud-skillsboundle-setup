@@ -1,0 +1,51 @@
+# Skills to install (upstream repo, skill name, optional SkillRelPath, disabled flag)
+# Format: repo|name|skillRelPath|disabled
+# skillRelPath: leave empty for default "skills/<name>", or specify custom path
+# disabled: "true" to park in skills._disabled/ with SKILL.md.disabled
+
+kulaxyz/self-learning-skills|self-learning||
+obra/superpowers|test-driven-development||
+obra/superpowers|systematic-debugging||
+obra/superpowers|writing-plans||
+obra/superpowers|executing-plans||
+obra/superpowers|subagent-driven-development||
+obra/superpowers|requesting-code-review||
+obra/superpowers|receiving-code-review||
+obra/superpowers|using-git-worktrees||
+obra/superpowers|finishing-a-development-branch||
+obra/superpowers|writing-skills||
+obra/superpowers|using-superpowers||
+obra/superpowers|dispatching-parallel-agents||
+shadcn/improve|improve||
+Forward-Future/loopy|loopy|skills/loopy|
+DietrichGebert/ponytail|ponytail||
+Nutlope/hallmark|hallmark||
+Leonxlnx/taste-skill|taste-skill|skills/taste-skill|
+JuliusBrussee/caveman|caveman||true
+JZKK720/andrej-karpathy-skills|karpathy-guidelines||
+# oz-skills (JZKK720 fork of orca/oz-skills). 14 active, 1 blocked by SkillSpector (webapp-testing: HIGH TM1).
+JZKK720/oz-skills|analysis-artifacts|.agents/skills/analysis-artifacts|
+JZKK720/oz-skills|ci-fix|.agents/skills/ci-fix|
+JZKK720/oz-skills|create-pull-request|.agents/skills/create-pull-request|
+JZKK720/oz-skills|dbt-model-index|.agents/skills/dbt-model-index|
+JZKK720/oz-skills|docs-update|.agents/skills/docs-update|
+JZKK720/oz-skills|github-bug-report-triage|.agents/skills/github-bug-report-triage|
+JZKK720/oz-skills|github-issue-dedupe|.agents/skills/github-issue-dedupe|
+JZKK720/oz-skills|mcp-builder|.agents/skills/mcp-builder|
+JZKK720/oz-skills|scheduler|.agents/skills/scheduler|
+JZKK720/oz-skills|seo-aeo-audit|.agents/skills/seo-aeo-audit|
+JZKK720/oz-skills|slack-qa-investigate|.agents/skills/slack-qa-investigate|
+JZKK720/oz-skills|terraform-style-check|.agents/skills/terraform-style-check|
+JZKK720/oz-skills|web-accessibility-audit|.agents/skills/web-accessibility-audit|
+JZKK720/oz-skills|web-performance-audit|.agents/skills/web-performance-audit|
+# webapp-testing: BLOCKED by SkillSpector (HIGH TM1 — tool parameter abuse, shell=True). Not installed.
+# JZKK720/oz-skills|webapp-testing|.agents/skills/webapp-testing|
+# design-md-library: hand-authored wrapper skill (Option B). Indexes the VoltAgent/awesome-design-md
+# fork mirror (74 DESIGN.md files, Google Stitch spec). Source lives at ~/dev/upstream/design-md-library/.
+# Fork mirror: ~/dev/forks/JZKK720/awesome-design-md/. Not a direct upstream install.
+local/design-md-library|design-md-library||
+# gstack-review is a hand-adapted port (MIT, from garrytan/gstack via JZKK720/gstack fork).
+# Not a direct install: the upstream SKILL.md has a Claude-Code shell preamble that breaks
+# under VS Code Copilot. The adapted version lives at ~/.agents/skills/gstack-review/
+# with reference/checklist.md + reference/*.md copied verbatim from the fork's review/ dir.
+# Re-create manually if missing; do not re-install from the fork (it would overwrite the port).

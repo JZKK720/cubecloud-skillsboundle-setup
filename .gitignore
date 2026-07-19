@@ -1,0 +1,17 @@
+# Fork mirrors — external repos, not versioned here.
+# Re-cloned by setup-global-skills.ps1 Phase 3.
+forks/
+
+# Local runtime artifacts (created by the installer, not source).
+# Governance docs in upstream/ ARE tracked (SCAN_LOG, audits) but
+# transient logs from tools are not.
+upstream/*.log
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+*.code-workspace

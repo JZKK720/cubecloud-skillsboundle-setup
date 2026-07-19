@@ -1,0 +1,40 @@
+{
+  "servers": {
+    "microsoft/markitdown": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["markitdown-mcp@latest"],
+      "gallery": "https://api.mcp.github.com",
+      "version": "1.0.0"
+    },
+    "skillspector": {
+      "type": "stdio",
+      "command": "skillspector",
+      "args": ["mcp"],
+      "env": { "PYTHONUTF8": "1" }
+    },
+    "firecrawl": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp@latest"],
+      "env": {}
+    },
+    "scrapling": {
+      "type": "stdio",
+      "command": "scrapling",
+      "args": ["mcp"],
+      "env": { "PYTHONUTF8": "1" }
+    },
+    "gbrain": {
+      "type": "stdio",
+      "command": "gbrain",
+      "args": ["serve"]
+    },
+    "graphify": {
+      "type": "stdio",
+      "command": "graphify-mcp",
+      "args": ["--transport", "stdio"]
+    }
+  },
+  "inputs": []
+}
