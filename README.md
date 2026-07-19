@@ -2,7 +2,7 @@
 
 > One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 62 skills, 11 CLIs, 6 MCP servers, and a 74-site design-system library, all security-gated.
 
-[![Skills](https://img.shields.io/badge/skills-62-2ea44f)](#whats-included)
+[![Skills](https://img.shields.io/badge/skills-64-2ea44f)](#whats-included)
 [![CLIs](https://img.shields.io/badge/CLIs-11-blue)](#clis-installed)
 [![MCP servers](https://img.shields.io/badge/MCP%20servers-6-purple)](#mcp-servers)
 [![Security gate](https://img.shields.io/badge/security%20gate-SkillSpector-green)](#security-model)
@@ -21,7 +21,7 @@ VS Code Copilot Chat gets dramatically more powerful when you give it **skills**
 
 | | Count | What |
 |---|---|---|
-| 🧠 Skills | **62** | Discovered by Copilot Chat — superpowers methodology, Azure patterns, design systems, code review, debugging, and more |
+| 🧠 Skills | **64** | Discovered by Copilot Chat — superpowers methodology, Azure patterns, design systems, code review, debugging, and more |
 | 🔧 CLIs | **11** | On PATH: `skillspector`, `skills-ref`, `specify`, `agent-reach`, `graphify`, `markitdown`, `gbrain`, `scrapling`, `uipro`, `firecrawl`, `skillopt-eval` |
 | 🔌 MCP servers | **6** | Configured in VS Code `mcp.json`: markitdown, skillspector, firecrawl, scrapling, gbrain, graphify |
 | 📚 Fork mirrors | **23** | Read-only backups in `~/dev/forks/JZKK720/`, including VoltAgent/awesome-design-md |
@@ -77,19 +77,21 @@ ai-mlstudio · airunway-aks-setup · appinsights-instrumentation · azure-ai · 
 **Hand-ported:**
 - **gstack-review** — pre-landing PR review with structural-issue checklist + 8 specialist lenses (security, testing, maintainability, performance, data-migration, api-contract, red-team). Adapted from [garrytan/gstack](https://github.com/garrytan/gstack) (MIT).
 - **design-md-library** — indexes the 74 DESIGN.md files in the awesome-design-md fork mirror so agents can self-serve "make it look like Stripe" requests
+- **idea-to-design** — clean port of obra/superpowers `brainstorming` (upstream blocked by SkillSpector for tool parameter abuse in `stop-server.sh`). Methodology only: collaborative design dialogue, hard gate before implementation, spec self-review, user review gate. No browser server, no scripts.
+- **webapp-testing** — clean port of JZKK720/oz-skills `webapp-testing` (upstream blocked by SkillSpector for `shell=True` tool parameter abuse in `scripts/with_server.py`). Methodology only: reconnaissance-then-action pattern, static vs dynamic decision tree. No bundled scripts; agent writes native Playwright or uses browser MCP tools.
 
 **Disabled by default:**
 - **caveman** — token compression, opt-in only
 
 **Blocked by SkillSpector (not installed — by design):**
 
-| Skill | Reason |
-|---|---|
-| brainstorming | Tool parameter abuse in `stop-server.sh` |
-| last30days | Info stealer (reads browser cookies) |
-| ui-ux-pro-max | Prompt extraction + unsafe defaults |
-| anysearch | Vulnerable `requests==2.20` (8 CVEs) |
-| webapp-testing | HIGH TM1 — tool parameter abuse (`shell=True` in `scripts/with_server.py:69`) |
+| Skill | Reason | Clean port? |
+|---|---|---|
+| brainstorming | Tool parameter abuse in `stop-server.sh` | **Yes** → `idea-to-design` |
+| last30days | Info stealer (reads browser cookies) | No — use `agent-reach` |
+| ui-ux-pro-max | Prompt extraction + unsafe defaults | No — use `hallmark` + `taste-skill` |
+| anysearch | Vulnerable `requests==2.20` (8 CVEs) | No |
+| webapp-testing (oz-skills) | HIGH TM1 — tool parameter abuse (`shell=True` in `scripts/with_server.py:69`) | **Yes** → `webapp-testing` (clean port) |
 
 ### CLIs installed
 

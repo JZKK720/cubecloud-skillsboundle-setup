@@ -36,3 +36,6 @@
 | 2026-07-20 01:10 | JZKK720/oz-skills | web-accessibility-audit | pass (exit 0) | active | ref:advisory |
 | 2026-07-20 01:10 | JZKK720/oz-skills | web-performance-audit | pass (exit 0) | active | ref:valid |
 | 2026-07-20 01:11 | local/design-md-library | design-md-library | pass (exit 0) | active | ref:valid |
+| 2026-07-20 01:33 | local/idea-to-design | idea-to-design | pass (exit 0) | active | ref:valid |
+| 2026-07-20 01:34 | local/webapp-testing | webapp-testing | pass (exit 0) | active | ref:advisory |
+| 2026-07-20 01:34 | local/webapp-testing | webapp-testing | pass (exit 0) | active | ref:valid |

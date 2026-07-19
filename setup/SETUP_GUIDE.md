@@ -102,13 +102,13 @@ Every skill is scanned by **NVIDIA SkillSpector** before install:
 
 ### Skills blocked by SkillSpector (not installed — by design)
 
-| Skill | Reason |
-|---|---|
-| brainstorming | Tool parameter abuse in stop-server.sh |
-| last30days | Info stealer (reads browser cookies) |
-| ui-ux-pro-max | Prompt extraction + unsafe defaults |
-| anysearch | Vulnerable requests==2.20 (8 CVEs) |
-| webapp-testing (oz-skills) | HIGH TM1 — tool parameter abuse (shell=True in scripts/with_server.py:69) |
+| Skill | Reason | Clean port available? |
+|---|---|---|
+| brainstorming | Tool parameter abuse in `stop-server.sh` (visual companion browser server) | **Yes** → `idea-to-design` (methodology only, no browser server) |
+| last30days | Info stealer (reads browser cookies) | No — use `agent-reach` for multi-platform research instead |
+| ui-ux-pro-max | Prompt extraction + unsafe defaults | No — use `hallmark` + `taste-skill` for UI design instead |
+| anysearch | Vulnerable `requests==2.20` (8 CVEs) | No |
+| webapp-testing (oz-skills) | HIGH TM1 — tool parameter abuse (`shell=True` in `scripts/with_server.py:69`) | **Yes** → `webapp-testing` (clean port, methodology only, no bundled scripts) |
 
 ### Platform limitations (Windows)
 

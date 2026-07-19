@@ -38,8 +38,14 @@ JZKK720/oz-skills|slack-qa-investigate|.agents/skills/slack-qa-investigate|
 JZKK720/oz-skills|terraform-style-check|.agents/skills/terraform-style-check|
 JZKK720/oz-skills|web-accessibility-audit|.agents/skills/web-accessibility-audit|
 JZKK720/oz-skills|web-performance-audit|.agents/skills/web-performance-audit|
-# webapp-testing: BLOCKED by SkillSpector (HIGH TM1 — tool parameter abuse, shell=True). Not installed.
+# webapp-testing: upstream blocked by SkillSpector (HIGH TM1 — shell=True in scripts/with_server.py).
+# Ported as a clean methodology-only skill (no bundled scripts) -> local/webapp-testing.
 # JZKK720/oz-skills|webapp-testing|.agents/skills/webapp-testing|
+local/webapp-testing|webapp-testing||
+# idea-to-design: hand-authored clean port of obra/superpowers brainstorming.
+# Upstream blocked by SkillSpector (tool parameter abuse in stop-server.sh visual companion).
+# This port removes the browser server entirely; pure process methodology only.
+local/idea-to-design|idea-to-design||
 # design-md-library: hand-authored wrapper skill (Option B). Indexes the VoltAgent/awesome-design-md
 # fork mirror (74 DESIGN.md files, Google Stitch spec). Source lives at ~/dev/upstream/design-md-library/.
 # Fork mirror: ~/dev/forks/JZKK720/awesome-design-md/. Not a direct upstream install.
