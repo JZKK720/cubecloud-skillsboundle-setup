@@ -55,3 +55,38 @@ local/design-md-library|design-md-library||
 # under VS Code Copilot. The adapted version lives at ~/.agents/skills/gstack-review/
 # with reference/checklist.md + reference/*.md copied verbatim from the fork's review/ dir.
 # Re-create manually if missing; do not re-install from the fork (it would overwrite the port).
+
+# ui-skills bundle (repo: ibelick/ui-skills)
+ibelick/ui-skills|ui-skills-root||
+ibelick/ui-skills|baseline-ui||
+ibelick/ui-skills|fixing-accessibility||
+ibelick/ui-skills|fixing-metadata||
+ibelick/ui-skills|fixing-motion-performance||
+ibelick/ui-skills|improve-ui||
+
+# agent-skills bundle (repo: addyosmani/agent-skills)
+# `test-driven-development` already ships from superpowers above, so we keep the
+# existing copy and install the remaining unique bundle entries here.
+addyosmani/agent-skills|api-and-interface-design||
+addyosmani/agent-skills|browser-testing-with-devtools||
+addyosmani/agent-skills|ci-cd-and-automation||
+addyosmani/agent-skills|code-review-and-quality||
+addyosmani/agent-skills|code-simplification||
+addyosmani/agent-skills|context-engineering||
+addyosmani/agent-skills|debugging-and-error-recovery||
+addyosmani/agent-skills|deprecation-and-migration||
+addyosmani/agent-skills|documentation-and-adrs||
+addyosmani/agent-skills|doubt-driven-development||
+addyosmani/agent-skills|frontend-ui-engineering||
+addyosmani/agent-skills|git-workflow-and-versioning||
+addyosmani/agent-skills|idea-refine||
+addyosmani/agent-skills|incremental-implementation||
+addyosmani/agent-skills|interview-me||
+addyosmani/agent-skills|observability-and-instrumentation||
+addyosmani/agent-skills|performance-optimization||
+addyosmani/agent-skills|planning-and-task-breakdown||
+addyosmani/agent-skills|security-and-hardening||
+addyosmani/agent-skills|shipping-and-launch||
+addyosmani/agent-skills|source-driven-development||
+addyosmani/agent-skills|spec-driven-development||
+addyosmani/agent-skills|using-agent-skills||
