@@ -69,6 +69,8 @@ api-and-interface-design · browser-testing-with-devtools · ci-cd-and-automatio
 **Azure & cloud (24 skills)** — bundled with VS Code Azure extensions, discovered automatically:
 ai-mlstudio · airunway-aks-setup · appinsights-instrumentation · azure-ai · azure-aigateway · azure-cloud-migrate · azure-compliance · azure-compute · azure-cost · azure-deploy · azure-diagnostics · azure-enterprise-infra-planner · azure-kubernetes · azure-kusto · azure-messaging · azure-prepare · azure-quotas · azure-reliability · azure-resource-lookup · azure-resource-visualizer · azure-storage · azure-upgrade · azure-validate · entra-agent-id · entra-app-registration · microsoft-foundry · python-appservice-deploy
 
+These Azure/Foundry entries are standard extension-provided skills, not custom bundle ports.
+
 **Crafted individual skills:**
 - **self-learning** — capture hard-won workflows as reusable skills
 - **improve** — audit a codebase into prioritized implementation plans
@@ -79,6 +81,8 @@ ai-mlstudio · airunway-aks-setup · appinsights-instrumentation · azure-ai · 
 - **karpathy-guidelines** — coding behavioral guidelines
 - **agent-reach** — research across 15 platforms (Twitter, Reddit, YouTube, GitHub, LinkedIn, Xueqiu, Bilibili, XiaoHongShu, and more)
 - **graphify** — turn any folder into a knowledge graph
+
+Custom implementations maintained in this setup are `agent-reach` and `gstack-review`.
 
 **Hand-ported:**
 - **gstack-review** — pre-landing PR review with structural-issue checklist + 8 specialist lenses (security, testing, maintainability, performance, data-migration, api-contract, red-team). Adapted from [garrytan/gstack](https://github.com/garrytan/gstack) (MIT).

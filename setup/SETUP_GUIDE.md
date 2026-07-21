@@ -90,6 +90,10 @@ winget install Microsoft.VisualStudioCode
 - idea-to-design (clean port of brainstorming — methodology only, no browser server)
 - webapp-testing (clean port — methodology only, no bundled scripts; agent writes native Playwright or uses browser MCP tools)
 
+Notes:
+- Azure/Foundry skills are standard extension-provided Copilot skills.
+- Custom implementations in this setup are `agent-reach` and `gstack-review`.
+
 **23 fork mirrors** (in ~/dev/forks/JZKK720/ — read-only backups, incl. VoltAgent/awesome-design-md)
 
 **5 governance docs** (in ~/.agents/ + ~/dev/upstream/):
