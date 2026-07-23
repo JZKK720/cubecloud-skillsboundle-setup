@@ -116,3 +116,48 @@ ibelick/ui-skills|fixing-metadata|skills/fixing-metadata|
 ibelick/ui-skills|fixing-motion-performance|skills/fixing-motion-performance|
 ibelick/ui-skills|improve-ui|skills/improve-ui|
 ibelick/ui-skills|ui-skills-root|skills/ui-skills-root|
+# --- ECC skills (evan-ai/ECC): 35 universal skills from agent harness OS ---
+# All pass SkillSpector (LOW/SAFE). Curated from 278 ECC skills — framework-specific,
+# ECC-internal, and domain-niche skills excluded. Fork mirror: ~/dev/forks/JZKK720/ECC/
+# Category: Agent Engineering & Quality
+JZKK720/ECC|safety-guard|skills/safety-guard|
+JZKK720/ECC|token-budget-advisor|skills/token-budget-advisor|
+JZKK720/ECC|intent-driven-development|skills/intent-driven-development|
+JZKK720/ECC|verification-loop|skills/verification-loop|
+JZKK720/ECC|eval-harness|skills/eval-harness|
+JZKK720/ECC|agent-self-evaluation|skills/agent-self-evaluation|
+JZKK720/ECC|prompt-optimizer|skills/prompt-optimizer|
+JZKK720/ECC|rules-distill|skills/rules-distill|
+JZKK720/ECC|knowledge-ops|skills/knowledge-ops|
+# Category: Codebase Intelligence
+JZKK720/ECC|codebase-onboarding|skills/codebase-onboarding|
+JZKK720/ECC|repo-scan|skills/repo-scan|
+JZKK720/ECC|code-tour|skills/code-tour|
+JZKK720/ECC|search-first|skills/search-first|
+# Category: Development Governance
+JZKK720/ECC|blueprint|skills/blueprint|
+JZKK720/ECC|strategic-compact|skills/strategic-compact|
+JZKK720/ECC|enterprise-agent-ops|skills/enterprise-agent-ops|
+JZKK720/ECC|production-audit|skills/production-audit|
+JZKK720/ECC|error-handling|skills/error-handling|
+JZKK720/ECC|delivery-gate|skills/delivery-gate|
+JZKK720/ECC|coding-standards|skills/coding-standards|
+JZKK720/ECC|context-budget|skills/context-budget|
+# Category: Security
+JZKK720/ECC|security-review|skills/security-review|
+JZKK720/ECC|security-scan|skills/security-scan|
+JZKK720/ECC|security-bounty-hunter|skills/security-bounty-hunter|
+# Category: Design & UI
+JZKK720/ECC|brand-discovery|skills/brand-discovery|
+JZKK720/ECC|brand-voice|skills/brand-voice|
+JZKK720/ECC|frontend-design-direction|skills/frontend-design-direction|
+JZKK720/ECC|make-interfaces-feel-better|skills/make-interfaces-feel-better|
+# Category: Operations & Cost
+JZKK720/ECC|continuous-agent-loop|skills/continuous-agent-loop|
+JZKK720/ECC|cost-tracking|skills/cost-tracking|
+JZKK720/ECC|cost-aware-llm-pipeline|skills/cost-aware-llm-pipeline|
+JZKK720/ECC|automation-audit-ops|skills/automation-audit-ops|
+JZKK720/ECC|connections-optimizer|skills/connections-optimizer|
+# Category: Engineering Practices
+JZKK720/ECC|mcp-server-patterns|skills/mcp-server-patterns|
+JZKK720/ECC|backend-patterns|skills/backend-patterns|
