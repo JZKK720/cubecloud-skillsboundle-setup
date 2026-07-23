@@ -28,6 +28,59 @@ VS Code Copilot Chat gets dramatically more powerful when you give it **skills**
 | 🎨 DESIGN.md files | **74** | Real-world design systems (Apple, Stripe, Linear, Vercel, Notion, Airbnb, Tesla…) indexed by the `design-md-library` skill |
 | 🔒 Security-gated | **yes** | Every skill scanned by SkillSpector before install; 5 skills blocked by design |
 
+## Architecture
+
+```mermaid
+graph TB
+    subgraph L4["LAYER 4 — Project Bootstrap"]
+        SPEC["specify init --integration copilot"]
+        AGENTS["10 .agent.md commands"]
+        TEMPLATES[".specify/ template tree"]
+        SPEC --> AGENTS
+        SPEC --> TEMPLATES
+    end
+
+    subgraph L3["LAYER 3 — Agent Commands (per-project)"]
+        SD["/speckit.specify → /speckit.plan → /speckit.tasks"]
+        IM["/speckit.implement → /speckit.converge"]
+        EXT["extensions · presets · bundles"]
+    end
+
+    subgraph L2["LAYER 2 — Skills (78 core, 26 Azure)"]
+        direction LR
+        METH["superpowers (12)"] --> COPILOT["VS Code Copilot Chat"]
+        DSN["design systems (74)"] --> COPILOT
+        REV["code review (6)"] --> COPILOT
+        DBG["debugging (4)"] --> COPILOT
+        LOOP["loop engineering (5)"] --> COPILOT
+        AZURE["Azure/cloud (26)"] --> COPILOT
+        CRAFT["crafted (13)"] --> COPILOT
+    end
+
+    subgraph L1["LAYER 1 — CLIs + MCP Servers"]
+        direction LR
+        CLI["12 CLIs on PATH"] --> MCP["7 MCP servers"]
+        MCP --> VSCODE["VS Code mcp.json"]
+    end
+
+    subgraph L0["LAYER 0 — Design Systems"]
+        D74["74 DESIGN.md files"] --> LIB["design-md-library skill"]
+    end
+
+    L4 --> L3
+    L3 --> L2
+    L2 --> L1
+    L1 --> L0
+
+    style L4 fill:#1a3a2a,stroke:#4caf50,color:#e0ffe0
+    style L3 fill:#1a2a3a,stroke:#2196f3,color:#e0f0ff
+    style L2 fill:#2a1a3a,stroke:#9c27b0,color:#f0e0ff
+    style L1 fill:#3a3a1a,stroke:#ff9800,color:#fff0e0
+    style L0 fill:#3a1a1a,stroke:#f44336,color:#ffe0e0
+```
+
+> **Layer 4** is where [spec-kit](https://github.com/github/spec-kit) lives — the only component that bridges "new project idea" → "structured, agent-ready project." Without it, every project starts as a blank prompt. With `specify init`, Copilot gets 10 native workflow commands, an SDD template stack, and an extension ecosystem.
+
 ## Quick start
 
 ```powershell
@@ -81,6 +134,10 @@ These Azure/Foundry entries are standard extension-provided skills, not custom b
 - **karpathy-guidelines** — coding behavioral guidelines
 - **agent-reach** — research across 15 platforms (Twitter, Reddit, YouTube, GitHub, LinkedIn, Xueqiu, Bilibili, XiaoHongShu, and more)
 - **graphify** — turn any folder into a knowledge graph
+- **browser-harness** — full CDP browser automation (navigate, extract, interact)
+- **loop-engineering (5 skills)** — agent self-management: triage, constraints, budget, verification, minimal-fix
+- **ARIS ports (3 skills)** — academic research workflow: literature search, novelty check, idea generation
+- **changelog-generator** — auto-generate user-facing changelogs from git history
 
 Custom implementations maintained in this setup are `agent-reach` and `gstack-review`.
 
@@ -109,7 +166,7 @@ Custom implementations maintained in this setup are `agent-reach` and `gstack-re
 |---|---|---|
 | `skillspector` | uv | Security scanner — hard gate for every skill install |
 | `skills-ref` | uv | Spec validator (advisory) |
-| `specify` | uv | Spec-Driven Development CLI (spec-kit) |
+| `specify` | uv | Spec-Driven Development CLI — `specify init` bootstraps a project with 10 Copilot-native `.agent.md` workflow commands (specify → plan → tasks → implement → converge), a 4-layer template resolution stack, and community extensions/presets/bundles. Pairs with the `spec-driven-development` skill. |
 | `skillopt-eval` | uv | Skill evaluation harness |
 | `agent-reach` | uv | 15-platform research access |
 | `graphify` | uv | Folder → knowledge graph |
@@ -171,6 +228,8 @@ In Copilot Chat, try:
 - *"use the **design-md-library** to build me a page that looks like Stripe"*
 - *"use **gstack-review** to review my PR"*
 - *"use **agent-reach** to research what people are saying about X on Reddit"*
+- *"use `specify init my-app --integration copilot` to scaffold a new SDD project"*
+- *"then `/speckit.specify Build a photo organizer with album grouping and drag-and-drop`"*
 
 ## To update later
 
