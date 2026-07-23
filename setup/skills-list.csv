@@ -78,3 +78,41 @@ ComposioHQ/awesome-claude-skills|changelog-generator|changelog-generator|
 local/aris-novelty-check|aris-novelty-check||upstream/aris-novelty-check
 local/aris-research-lit|aris-research-lit||upstream/aris-research-lit
 local/aris-idea-creator|aris-idea-creator||upstream/aris-idea-creator
+# --- agent-skills (addyosmani/agent-skills): 23 methodology skills ---
+# All pass SkillSpector (17 LOW/SAFE, 7 MEDIUM/CAUTION, 0 blocked).
+# test-driven-development is SKIPPED (duplicate of obra/superpowers one already installed).
+# Fork mirror: ~/dev/forks/JZKK720/agent-skills/
+addyosmani/agent-skills|api-and-interface-design|skills/api-and-interface-design|
+addyosmani/agent-skills|browser-testing-with-devtools|skills/browser-testing-with-devtools|
+addyosmani/agent-skills|ci-cd-and-automation|skills/ci-cd-and-automation|
+addyosmani/agent-skills|code-review-and-quality|skills/code-review-and-quality|
+addyosmani/agent-skills|code-simplification|skills/code-simplification|
+addyosmani/agent-skills|context-engineering|skills/context-engineering|
+addyosmani/agent-skills|debugging-and-error-recovery|skills/debugging-and-error-recovery|
+addyosmani/agent-skills|deprecation-and-migration|skills/deprecation-and-migration|
+addyosmani/agent-skills|documentation-and-adrs|skills/documentation-and-adrs|
+addyosmani/agent-skills|doubt-driven-development|skills/doubt-driven-development|
+addyosmani/agent-skills|frontend-ui-engineering|skills/frontend-ui-engineering|
+addyosmani/agent-skills|git-workflow-and-versioning|skills/git-workflow-and-versioning|
+addyosmani/agent-skills|idea-refine|skills/idea-refine|
+addyosmani/agent-skills|incremental-implementation|skills/incremental-implementation|
+addyosmani/agent-skills|interview-me|skills/interview-me|
+addyosmani/agent-skills|observability-and-instrumentation|skills/observability-and-instrumentation|
+addyosmani/agent-skills|performance-optimization|skills/performance-optimization|
+addyosmani/agent-skills|planning-and-task-breakdown|skills/planning-and-task-breakdown|
+addyosmani/agent-skills|security-and-hardening|skills/security-and-hardening|
+addyosmani/agent-skills|shipping-and-launch|skills/shipping-and-launch|
+addyosmani/agent-skills|source-driven-development|skills/source-driven-development|
+addyosmani/agent-skills|spec-driven-development|skills/spec-driven-development|
+addyosmani/agent-skills|using-agent-skills|skills/using-agent-skills|
+# --- ui-skills (ibelick/ui-skills): 7 UI improvement skills ---
+# All pass SkillSpector (LOW/SAFE). Includes create-design-md (not in README's
+# original 6, but it's in the repo and passes scan).
+# Fork mirror: ~/dev/forks/JZKK720/ui-skills/
+ibelick/ui-skills|baseline-ui|skills/baseline-ui|
+ibelick/ui-skills|create-design-md|skills/create-design-md|
+ibelick/ui-skills|fixing-accessibility|skills/fixing-accessibility|
+ibelick/ui-skills|fixing-metadata|skills/fixing-metadata|
+ibelick/ui-skills|fixing-motion-performance|skills/fixing-motion-performance|
+ibelick/ui-skills|improve-ui|skills/improve-ui|
+ibelick/ui-skills|ui-skills-root|skills/ui-skills-root|

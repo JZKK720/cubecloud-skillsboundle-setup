@@ -1,8 +1,8 @@
 # 🧊 CubeCloud Skills Bundle
 
-> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 94 skills, 12 CLIs, 7 MCP servers, and a 74-site design-system library, all security-gated.
+> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 104 skills, 12 CLIs, 7 MCP servers, and a 74-site design-system library, all security-gated.
 
-[![Skills](https://img.shields.io/badge/skills-94-2ea44f)](#whats-included)
+[![Skills](https://img.shields.io/badge/skills-104-2ea44f)](#whats-included)
 [![CLIs](https://img.shields.io/badge/CLIs-12-blue)](#clis-installed)
 [![MCP servers](https://img.shields.io/badge/MCP%20servers-7-purple)](#mcp-servers)
 [![Security gate](https://img.shields.io/badge/security%20gate-SkillSpector-green)](#security-model)
@@ -21,10 +21,10 @@ VS Code Copilot Chat gets dramatically more powerful when you give it **skills**
 
 | | Count | What |
 |---|---|---|
-| 🧠 Skills | **94** | Discovered by Copilot Chat — superpowers methodology, ui-skills, agent-skills, Azure patterns, design systems, code review, debugging, and more |
+| 🧠 Skills | **104** | Discovered by Copilot Chat — superpowers methodology, ui-skills, agent-skills, Azure patterns, design systems, code review, debugging, and more |
 | 🔧 CLIs | **12** | On PATH: `skillspector`, `skills-ref`, `specify`, `agent-reach`, `graphify`, `markitdown`, `gbrain`, `scrapling`, `uipro`, `firecrawl`, `skillopt-eval`, `headroom` |
 | 🔌 MCP servers | **7** | Configured in VS Code `mcp.json`: markitdown, skillspector, firecrawl, scrapling, gbrain, graphify, headroom |
-| 📚 Fork mirrors | **23** | Read-only backups in `~/dev/forks/JZKK720/`, including VoltAgent/awesome-design-md |
+| 📚 Fork mirrors | **27** | Read-only backups in `~/dev/forks/JZKK720/`, including VoltAgent/awesome-design-md |
 | 🎨 DESIGN.md files | **74** | Real-world design systems (Apple, Stripe, Linear, Vercel, Notion, Airbnb, Tesla…) indexed by the `design-md-library` skill |
 | 🔒 Security-gated | **yes** | Every skill scanned by SkillSpector before install; 5 skills blocked by design |
 
@@ -52,7 +52,7 @@ winget install Microsoft.VisualStudioCode
 
 ## What's included
 
-### Skills (94 active, 1 disabled, 5 blocked — 2 with clean ports)
+### Skills (104 active, 1 disabled, 5 blocked — 2 with clean ports)
 
 **Superpowers methodology (12 skills)** from [obra/superpowers](https://github.com/obra/superpowers):
 test-driven-development · systematic-debugging · writing-plans · executing-plans · subagent-driven-development · requesting-code-review · receiving-code-review · using-git-worktrees · finishing-a-development-branch · writing-skills · using-superpowers · dispatching-parallel-agents
