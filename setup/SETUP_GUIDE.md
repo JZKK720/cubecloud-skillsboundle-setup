@@ -24,7 +24,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\setup-global-skills.ps1
 | 1b | Copy install-skill.ps1 helper to ~/dev/bin/ | instant |
 | 2 | Install 12 CLI tools (uv tool + npm + bun) | ~5 min |
 | 3 | Clone 27 fork mirrors (26 JZKK720 + awesome-design-md) (skip with -SkipForks) | ~2 min |
-| 4 | Install 75 skills through security-gated pipeline (104 total incl. Azure-extension and CLI-provisioned skills) | ~5 min |
+| 4 | Install 110 skills through security-gated pipeline (139 total incl. Azure-extension and CLI-provisioned skills) | ~5 min |
 | 5 | Configure 7 MCP servers in VS Code User/mcp.json | instant |
 | 5b | Pin Copilot utility models in VS Code User/settings.json | instant |
 | 6 | Create governance docs (README, CONFLICTS, MEMORY_POLICY, UPDATE_POLICY, SCAN_LOG) | instant |
@@ -70,8 +70,9 @@ winget install Microsoft.VisualStudioCode
 - gbrain (via bun)
 - headroom (via uv, requires Defender exclusion for ast-grep-cli — see below)
 
-**75 skills via pipeline + 2 CLI-provisioned skills + ~27 Azure-extension skills = 104 total** (in ~/.agents/skills/ — discovered by VS Code Copilot Chat):
+**110 skills via pipeline + 2 CLI-provisioned skills + ~27 Azure-extension skills = 139 total** (in ~/.agents/skills/ — discovered by VS Code Copilot Chat):
 - superpowers methodology (12 skills): TDD, systematic-debugging, writing/executing-plans, subagent-driven-development, code review, git-worktrees, finishing-branch, writing-skills, using-superpowers, dispatching-parallel-agents
+- ECC agent engineering (35 skills): safety-guard, token-budget-advisor, intent-driven-development, verification-loop, eval-harness, agent-self-evaluation, prompt-optimizer, rules-distill, knowledge-ops, codebase-onboarding, repo-scan, code-tour, search-first, blueprint, strategic-compact, enterprise-agent-ops, production-audit, error-handling, delivery-gate, coding-standards, context-budget, security-review, security-scan, security-bounty-hunter, brand-discovery, brand-voice, frontend-design-direction, make-interfaces-feel-better, continuous-agent-loop, cost-tracking, cost-aware-llm-pipeline, automation-audit-ops, connections-optimizer, mcp-server-patterns, backend-patterns
 - self-learning (meta-skill for skill authoring)
 - improve (audit-to-plan)
 - loopy (loop library)

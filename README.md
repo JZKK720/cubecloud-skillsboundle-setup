@@ -1,8 +1,8 @@
 # 🧊 CubeCloud Skills Bundle
 
-> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 104 skills, 12 CLIs, 7 MCP servers, and a 74-site design-system library, all security-gated.
+> One-command setup for a full **VS Code Copilot Chat** agent-skills stack on Windows — 139 skills, 12 CLIs, 7 MCP servers, and a 74-site design-system library, all security-gated.
 
-[![Skills](https://img.shields.io/badge/skills-104-2ea44f)](#whats-included)
+[![Skills](https://img.shields.io/badge/skills-139-2ea44f)](#whats-included)
 [![CLIs](https://img.shields.io/badge/CLIs-12-blue)](#clis-installed)
 [![MCP servers](https://img.shields.io/badge/MCP%20servers-7-purple)](#mcp-servers)
 [![Security gate](https://img.shields.io/badge/security%20gate-SkillSpector-green)](#security-model)
@@ -21,7 +21,7 @@ VS Code Copilot Chat gets dramatically more powerful when you give it **skills**
 
 | | Count | What |
 |---|---|---|
-| 🧠 Skills | **104** | Discovered by Copilot Chat — superpowers methodology, ui-skills, agent-skills, Azure patterns, design systems, code review, debugging, and more |
+| 🧠 Skills | **139** | Discovered by Copilot Chat — superpowers methodology, ui-skills, agent-skills, ECC agent engineering, Azure patterns, design systems, code review, debugging, and more |
 | 🔧 CLIs | **12** | On PATH: `skillspector`, `skills-ref`, `specify`, `agent-reach`, `graphify`, `markitdown`, `gbrain`, `scrapling`, `uipro`, `firecrawl`, `skillopt-eval`, `headroom` |
 | 🔌 MCP servers | **7** | Configured in VS Code `mcp.json`: markitdown, skillspector, firecrawl, scrapling, gbrain, graphify, headroom |
 | 📚 Fork mirrors | **27** | Read-only backups in `~/dev/forks/JZKK720/`, including VoltAgent/awesome-design-md |
@@ -46,7 +46,7 @@ graph TB
         EXT["extensions · presets · bundles"]
     end
 
-    subgraph L2["LAYER 2 — Skills (78 core, 26 Azure)"]
+    subgraph L2["LAYER 2 — Skills (113 core, 26 Azure)"]
         direction LR
         METH["superpowers (12)"] --> COPILOT["VS Code Copilot Chat"]
         DSN["design systems (74)"] --> COPILOT
@@ -105,10 +105,13 @@ winget install Microsoft.VisualStudioCode
 
 ## What's included
 
-### Skills (104 active, 1 disabled, 5 blocked — 2 with clean ports)
+### Skills (139 active, 1 disabled, 5 blocked — 2 with clean ports)
 
 **Superpowers methodology (12 skills)** from [obra/superpowers](https://github.com/obra/superpowers):
 test-driven-development · systematic-debugging · writing-plans · executing-plans · subagent-driven-development · requesting-code-review · receiving-code-review · using-git-worktrees · finishing-a-development-branch · writing-skills · using-superpowers · dispatching-parallel-agents
+
+**ECC agent engineering (35 skills)** from [evan-ai/ECC](https://github.com/evan-ai/ECC) — curated from 278, framework-agnostic only:
+safety-guard · token-budget-advisor · intent-driven-development · verification-loop · eval-harness · agent-self-evaluation · prompt-optimizer · rules-distill · knowledge-ops · codebase-onboarding · repo-scan · code-tour · search-first · blueprint · strategic-compact · enterprise-agent-ops · production-audit · error-handling · delivery-gate · coding-standards · context-budget · security-review · security-scan · security-bounty-hunter · brand-discovery · brand-voice · frontend-design-direction · make-interfaces-feel-better · continuous-agent-loop · cost-tracking · cost-aware-llm-pipeline · automation-audit-ops · connections-optimizer · mcp-server-patterns · backend-patterns
 
 **oz-skills (14 active)** from the JZKK720 fork mirror:
 analysis-artifacts · ci-fix · create-pull-request · dbt-model-index · docs-update · github-bug-report-triage · github-issue-dedupe · mcp-builder · scheduler · seo-aeo-audit · slack-qa-investigate · terraform-style-check · web-accessibility-audit · web-performance-audit
