@@ -41,52 +41,40 @@ JZKK720/oz-skills|web-performance-audit|.agents/skills/web-performance-audit|
 # webapp-testing: upstream blocked by SkillSpector (HIGH TM1 — shell=True in scripts/with_server.py).
 # Ported as a clean methodology-only skill (no bundled scripts) -> local/webapp-testing.
 # JZKK720/oz-skills|webapp-testing|.agents/skills/webapp-testing|
-local/webapp-testing|webapp-testing||
+local/webapp-testing|webapp-testing||upstream/webapp-testing
 # idea-to-design: hand-authored clean port of obra/superpowers brainstorming.
 # Upstream blocked by SkillSpector (tool parameter abuse in stop-server.sh visual companion).
 # This port removes the browser server entirely; pure process methodology only.
-local/idea-to-design|idea-to-design||
+local/idea-to-design|idea-to-design||upstream/idea-to-design
 # design-md-library: hand-authored wrapper skill (Option B). Indexes the VoltAgent/awesome-design-md
 # fork mirror (74 DESIGN.md files, Google Stitch spec). Source lives at ~/dev/upstream/design-md-library/.
 # Fork mirror: ~/dev/forks/JZKK720/awesome-design-md/. Not a direct upstream install.
-local/design-md-library|design-md-library||
+local/design-md-library|design-md-library||upstream/design-md-library
 # gstack-review is a hand-adapted port (MIT, from garrytan/gstack via JZKK720/gstack fork).
 # Not a direct install: the upstream SKILL.md has a Claude-Code shell preamble that breaks
 # under VS Code Copilot. The adapted version lives at ~/.agents/skills/gstack-review/
 # with reference/checklist.md + reference/*.md copied verbatim from the fork's review/ dir.
 # Re-create manually if missing; do not re-install from the fork (it would overwrite the port).
-
-# ui-skills bundle (repo: ibelick/ui-skills)
-ibelick/ui-skills|ui-skills-root||
-ibelick/ui-skills|baseline-ui||
-ibelick/ui-skills|fixing-accessibility||
-ibelick/ui-skills|fixing-metadata||
-ibelick/ui-skills|fixing-motion-performance||
-ibelick/ui-skills|improve-ui||
-
-# agent-skills bundle (repo: addyosmani/agent-skills)
-# `test-driven-development` already ships from superpowers above, so we keep the
-# existing copy and install the remaining unique bundle entries here.
-addyosmani/agent-skills|api-and-interface-design||
-addyosmani/agent-skills|browser-testing-with-devtools||
-addyosmani/agent-skills|ci-cd-and-automation||
-addyosmani/agent-skills|code-review-and-quality||
-addyosmani/agent-skills|code-simplification||
-addyosmani/agent-skills|context-engineering||
-addyosmani/agent-skills|debugging-and-error-recovery||
-addyosmani/agent-skills|deprecation-and-migration||
-addyosmani/agent-skills|documentation-and-adrs||
-addyosmani/agent-skills|doubt-driven-development||
-addyosmani/agent-skills|frontend-ui-engineering||
-addyosmani/agent-skills|git-workflow-and-versioning||
-addyosmani/agent-skills|idea-refine||
-addyosmani/agent-skills|incremental-implementation||
-addyosmani/agent-skills|interview-me||
-addyosmani/agent-skills|observability-and-instrumentation||
-addyosmani/agent-skills|performance-optimization||
-addyosmani/agent-skills|planning-and-task-breakdown||
-addyosmani/agent-skills|security-and-hardening||
-addyosmani/agent-skills|shipping-and-launch||
-addyosmani/agent-skills|source-driven-development||
-addyosmani/agent-skills|spec-driven-development||
-addyosmani/agent-skills|using-agent-skills||
+# --- New skills from 3-repo evaluation (2026-07-23) ---
+# loop-engineering (cobusgreyling/loop-engineering): clean methodology skills for
+# agent loop design. All pass SkillSpector (LOW/SAFE). No MCP deps, plain SKILL.md.
+# Fork mirror: ~/dev/forks/JZKK720/loop-engineering/
+cobusgreyling/loop-engineering|loop-triage|skills/loop-triage|
+cobusgreyling/loop-engineering|minimal-fix|skills/minimal-fix|
+cobusgreyling/loop-engineering|loop-constraints|skills/loop-constraints|
+cobusgreyling/loop-engineering|loop-verifier|skills/loop-verifier|
+cobusgreyling/loop-engineering|loop-budget|skills/loop-budget|
+# changelog-generator (ComposioHQ/awesome-claude-skills): clean skill, no Composio/MCP
+# coupling. Passes SkillSpector (LOW/SAFE). Skill is at repo root <name>/SKILL.md
+# (not under skills/), so relPath is just the folder name.
+# Fork mirror: ~/dev/forks/JZKK720/awesome-claude-skills/
+ComposioHQ/awesome-claude-skills|changelog-generator|changelog-generator|
+# ARIS ports (wanshuiyin/Auto-claude-code-research-in-sleep): 3 research-workflow skills
+# ported as methodology-only. Upstream uses mcp__codex__codex, $ARGUMENTS, Bash(*),
+# research-wiki, GPU pilots — all Claude-Code-specific. Ports strip those deps, keeping
+# the core research methodology (landscape survey, idea generation, novelty check).
+# All 3 ports pass SkillSpector (LOW/SAFE) and skills-ref validate.
+# Fork mirror: ~/dev/forks/JZKK720/Auto-claude-code-research-in-sleep/
+local/aris-novelty-check|aris-novelty-check||upstream/aris-novelty-check
+local/aris-research-lit|aris-research-lit||upstream/aris-research-lit
+local/aris-idea-creator|aris-idea-creator||upstream/aris-idea-creator
